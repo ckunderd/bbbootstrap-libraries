@@ -1,3 +1,4 @@
+class="",
 ease-linear,
 duration-75,
 duration-100,
