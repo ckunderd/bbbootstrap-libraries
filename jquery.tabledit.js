@@ -44,7 +44,7 @@ if (typeof jQuery === 'undefined') {
             saveButton: true,
             restoreButton: true,
             customize: {
-                actionParam: 'fart'
+                actionParam: 'action'
             },
             buttons: {
                 edit: {
@@ -390,6 +390,9 @@ if (typeof jQuery === 'undefined') {
          */
         function ajax(action)
         {
+            var program = $table.attr('data-program');
+            console.log('program: ' + program);
+
             var serialize = $table.find('.tabledit-input').serialize() + '&'+settings.customize.actionParam+'=' + action;
 
             var result = settings.onAjax(action, serialize);
