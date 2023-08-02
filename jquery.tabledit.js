@@ -404,6 +404,8 @@ if (typeof jQuery === 'undefined') {
                     }, 1400);
                 }
 
+                console.log($(location).attr('href'));
+
                 settings.onSuccess(data, textStatus, jqXHR);
             }, 'json');
 
