@@ -43,6 +43,9 @@ if (typeof jQuery === 'undefined') {
             deleteButton: true,
             saveButton: true,
             restoreButton: true,
+            customize: {
+                actionParam: 'fart'
+            },
             buttons: {
                 edit: {
                     class: 'btn btn-primary waves-effect waves-light',
@@ -387,7 +390,7 @@ if (typeof jQuery === 'undefined') {
          */
         function ajax(action)
         {
-            var serialize = $table.find('.tabledit-input').serialize() + '&action=' + action;
+            var serialize = $table.find('.tabledit-input').serialize() + '&'+settings.customize.actionParam+'=' + action;
 
             var result = settings.onAjax(action, serialize);
 
