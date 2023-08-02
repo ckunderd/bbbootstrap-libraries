@@ -29,7 +29,7 @@ if (typeof jQuery === 'undefined') {
 
         var defaults = {
             url: window.location.href,
-            editmethod: 'post',
+            editmethod: 'patch',
             deletemethod: 'post',
             inputClass: 'form-control input-sm',
             toolbarClass: 'btn-toolbar',
