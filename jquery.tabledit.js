@@ -391,9 +391,10 @@ if (typeof jQuery === 'undefined') {
         function ajax(action)
         {
             var program = $table.attr('data-program');
+            var cohort = $table.attr('data-cohort');
             console.log('program: ' + program);
 
-            var serialize = $table.find('.tabledit-input').serialize() + '&'+settings.customize.actionParam+'=' + action;
+            var serialize = $table.find('.tabledit-input').serialize() + '&'+settings.customize.actionParam+'=' + action + '&program=' + program + '&cohort=' + cohort;
 
             var result = settings.onAjax(action, serialize);
 
