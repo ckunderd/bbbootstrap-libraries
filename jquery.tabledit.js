@@ -29,8 +29,6 @@ if (typeof jQuery === 'undefined') {
 
         var defaults = {
             url: window.location.href,
-            editmethod: 'patch',
-            deletemethod: 'post',
             inputClass: 'form-control input-sm',
             toolbarClass: 'btn-toolbar',
             groupClass: 'btn-group btn-group-sm',
@@ -397,13 +395,7 @@ if (typeof jQuery === 'undefined') {
                 return false;
             }
 
-            //var jqXHR = $.post(settings.url, serialize, function(data, textStatus, jqXHR) {
-            settings.method = settings[action + 'method'];
-
-            var jqXHR = $.ajax(settings.url, {
-                    'method': settings.method,
-                    'data': serialize
-                }, serialize, function(data, textStatus, jqXHR) {
+            var jqXHR = $.post(settings.url, serialize, function(data, textStatus, jqXHR) {
                 if (action === settings.buttons.edit.action) {
                     $lastEditedRow.removeClass(settings.dangerClass).addClass(settings.warningClass);
                     setTimeout(function() {
